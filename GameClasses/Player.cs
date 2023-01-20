@@ -42,7 +42,7 @@ namespace AutoDoors.GameClasses
                     if (!td.Update())
                         continue;
 
-                    var obj = UnityEngine.Object.FindObjectFromInstanceID(td.Id);
+                    var obj = Utility.FindObjectFromInstanceID(td.Id);
                     if (obj is Door d)
                     {
                         var prevInAutoRange = td.InAutoRange;

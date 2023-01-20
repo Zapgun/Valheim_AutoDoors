@@ -28,7 +28,7 @@ namespace AutoDoors
 
         public bool Update()
         {
-            var obj = UnityEngine.Object.FindObjectFromInstanceID(Id);
+            var obj = Utility.FindObjectFromInstanceID(Id);
             if (obj != null && obj is Door d)
             {
                 var zd0 = ZNetView?.GetZDO();

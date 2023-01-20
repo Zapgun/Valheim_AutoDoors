@@ -50,7 +50,7 @@ namespace AutoDoors
         /// <summary>
         /// Is the mod actively running (either not in a crypt or disable in crypt is set to false)
         /// </summary>
-        public bool IsActive { get => !Cfg.DisableInCrypt || !IsCrypt; }
+        public bool IsActive { get => (!Cfg.DisableInCrypt || !IsCrypt) && Cfg.ModEnabled; }
 
         /// <summary>
         /// Time of last update 
@@ -96,6 +96,20 @@ namespace AutoDoors
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), null);
 
             Logger.LogInfo($"Plugin {Info.Metadata.GUID} loading complete!");
+        }
+
+        public void Update()
+        {
+            if (!Player.m_localPlayer || !ZNetScene.instance)
+                return;
+
+            if (Cfg.hotKeyToggle.Value.IsDown())
+            {
+                Cfg.modEnabled.Value = !Cfg.modEnabled.Value;
+
+                string strIsEnabled = Cfg.modEnabled.Value ? "Auto Doors is enabled" : "Auto Doors is disabled";
+                Player.m_localPlayer.Message(MessageHud.MessageType.Center, strIsEnabled);
+            }
         }
 
         #endregion

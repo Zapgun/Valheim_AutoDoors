@@ -21,45 +21,23 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>D:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="assembly_googleanalytics">
-      <HintPath>D:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\assembly_googleanalytics.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="assembly_guiutils">
-      <HintPath>D:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\assembly_guiutils.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="assembly_lux">
-      <HintPath>D:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\assembly_lux.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="assembly_postprocessing">
-      <HintPath>D:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\assembly_postprocessing.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="assembly_simplemeshcombine">
-      <HintPath>D:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\assembly_simplemeshcombine.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="assembly_steamworks">
-      <HintPath>D:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\assembly_steamworks.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="assembly_sunshafts">
-      <HintPath>D:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\assembly_sunshafts.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="assembly_utils">
-      <HintPath>D:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\assembly_utils.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="0Harmony">
+      <HintPath>libs\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="assembly_valheim">
-      <HintPath>D:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\assembly_valheim.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>libs\assembly_valheim.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>libs\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>libs\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>libs\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>libs\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
