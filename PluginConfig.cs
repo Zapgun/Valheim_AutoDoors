@@ -22,6 +22,7 @@ namespace AutoDoors
         /// Hotkey to toggle mod on and off
         /// </summary>
         public ConfigEntry<KeyboardShortcut> hotKeyToggle;
+        private static KeyboardShortcut hotKeyDefault = new KeyboardShortcut((KeyCode)117, Array.Empty<KeyCode>());
 
         /// <summary>
         /// Minimum interval between updates (s)
@@ -35,6 +36,12 @@ namespace AutoDoors
         public bool DisableInCrypt { get => disableInCrypt.Value; }
         ConfigEntry<bool> disableInCrypt;
 
+        /// <summary>
+        /// Disables doors auto opening
+        /// </summary>
+        public bool DisableOpeningDoors { get => disableOpeningDoors.Value; }
+        ConfigEntry<bool> disableOpeningDoors;
+
         #endregion
 
         #region Methods
@@ -47,9 +54,10 @@ namespace AutoDoors
             var config = AutoDoorPlugin.Instance.Config;
 
             modEnabled = config.Bind("General", "modEnabled", true, "Enable the mod");
-            hotKeyToggle = config.Bind("General", "hotkeyToggle", new KeyboardShortcut(KeyCode.U), "Toggle the mon on/off with this key");
+            hotKeyToggle = config.Bind("General", "hotkeyToggle", new KeyboardShortcut(KeyCode.U, KeyCode.LeftAlt), "Toggle the mon on/off with this.");
             updateInterval = config.Bind("General", "updateInterval", 1f/16, "Minimum interval between updates (s)");
             disableInCrypt = config.Bind("Crypt Behaviour", "disableInCrypt", true, "Disables auto doors inside crypts");
+            disableOpeningDoors = config.Bind("Doors", "Disable Opening Doors", true, "Disables opening doors, will only auto close them.");
         }
         #endregion
     }

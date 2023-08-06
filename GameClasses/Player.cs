@@ -56,7 +56,10 @@ namespace AutoDoors.GameClasses
                                 {
                                     if (!td.IsAutoOpened)
                                     {
-                                        d.Interact(player, false, false);
+                                        if (!AutoDoorPlugin.Instance.Cfg.DisableOpeningDoors)
+                                        {
+                                            d.Interact(player, false, false);
+                                        }
                                     }
                                     else
                                     {
